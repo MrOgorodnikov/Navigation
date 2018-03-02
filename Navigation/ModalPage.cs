@@ -8,6 +8,7 @@ namespace Navigation
     {
         public ModalPage()
         {
+            Title = "Modal";
             Content = new StackLayout
             {
                 Children = {

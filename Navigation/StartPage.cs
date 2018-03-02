@@ -4,31 +4,37 @@ using Xamarin.Forms;
 
 namespace Navigation
 {
-    public class StartPage : ContentPage
+    public class StartPage : TabbedPage
     {
         public StartPage()
         {
-            var modalPage = new Button
-            {
-                Text = "  Open modal page  ",
-                Margin = new Thickness(10)
-            };
-            modalPage.Clicked += ModalPage_Clicked;
+            Children.Add(new ModalPage());
+            Children.Add(new CommonPage());
+             
+            //var modalPage = new Button
+            //{
+            //    Text = "  Open modal page  ",
+            //    Margin = new Thickness(10)
+            //};
+            //modalPage.Clicked += ModalPage_Clicked;
 
-            var contentPage = new Button
-            {
-                Text = "  Open content page  ",
-                Margin = new Thickness(10)
-            };
-            contentPage.Clicked += ContentPage_Clicked;
+            //var contentPage = new Button
+            //{
+            //    Text = "  Open content page  ",
+            //    Margin = new Thickness(10)
+            //};
+            //contentPage.Clicked += ContentPage_Clicked;
 
-            Content = new StackLayout
-            {
-                Children = {
-                    modalPage,
-                    contentPage
-                }
-            };
+            //var e = new Entry();
+
+            //Content = new StackLayout
+            //{
+            //    Children = {
+            //        modalPage,
+            //        contentPage,
+            //        e
+            //    }
+            //};
         }
 
         void ModalPage_Clicked(object sender, EventArgs e)
